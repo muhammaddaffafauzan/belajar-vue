@@ -11,7 +11,7 @@ const objectOfAttrs = {
 let seen = " "
 // aritmatika
 let a = 10;
-let b = 5;
+let b = 20;
 let c = a + b;
 </script>
 <template>
