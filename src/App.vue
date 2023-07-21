@@ -34,13 +34,6 @@ export default {
       email: ref(''),
     };
   },
-  methods: {
-    submitForm() {
-      this.name = this.kontak.nama;
-      this.email = this.kontak.email;
-      this.showResult = true;
-    },
-  },
   computed: {
     isInvalidName() {
       return this.name.length < 1;
@@ -49,12 +42,22 @@ export default {
       return this.email.length < 1;
     },
   },
+  methods: {
+    submitForm() {
+      this.name = this.kontak.nama;
+      this.email = this.kontak.email;
+      this.showResult = true;
+      this.isInvalidName = false;
+      this.isInvalidEmail = false;
+    },
+  },
+  
 };
 </script>
 
 <style>
 h2 {
-  color: rgb(0, 213, 255);
+  color: rgb(0, 0, 0);
 }
 .error-message {
   color: red;
