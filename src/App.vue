@@ -9,11 +9,11 @@
     <label for="">Alamat</label>
     <textarea v-model="siswa.alamat" cols="20" rows="5"></textarea><br>
     <label for="">nilai matematika</label>
-    <input type="number" v-model="siswa.mtk" id="mtk"><br>
+    <input type="number" v-model="siswa.nilaimtk" id="mtk"><br>
     <label for="">nilai b.indonesia</label>
-    <input type="number" v-model="siswa.bhs" id="bhs"><br>
+    <input type="number" v-model="siswa.nilaibhs" id="bhs"><br>
     <label for="">nilai ipa</label>
-    <input type="number" v-model="siswa.ipa" id="ipa"><br>
+    <input type="number" v-model="siswa.nilaiipa" id="ipa"><br>
     <button type="submit">Simpan</button>
     </form>
     <div v-if="showResult">
@@ -32,8 +32,6 @@
 import { ref } from 'vue';
 
 export default {
-// logika
-  
 
   data() {
     return {
@@ -41,9 +39,9 @@ export default {
      nama: '',
      kelas: '',
      alamat: '',
-     mtk: '',
-     bhs: '',
-     ipa: ''
+     nilaimtk: '',
+     nilaibhs: '',
+     nilaiipa: ''
     },
     showResult: ref(false),
       name: ref(''),
@@ -61,9 +59,9 @@ export default {
       this.name = this.siswa.nama;
       this.kelas = this.siswa.kelas;
       this.alamat = this.siswa.alamat;
-      this.mtk = this.siswa.mtk;
-      this.bhs = this.siswa.bhs;
-      this.ipa = this.siswa.ipa;
+      this.mtk = this.siswa.nilaimtk;
+      this.bhs = this.siswa.nilaibhs;
+      this.ipa = this.siswa.nilaiipa;
       this.total = parseInt(this.mtk) + parseInt(this.bhs) + parseInt(this.ipa);
       if (this.total > 240) {
         this.keterangan = "lulus"
