@@ -1,76 +1,18 @@
 <template>
   <div>
-    <h2>Formulir siswa</h2>
-    <form @submit.prevent="submitForm"> 
-    <label for="">Nama</label>
-    <input type="text" v-model="siswa.nama"><br>
-    <label for="">Kelas</label>
-    <input type="text" v-model="siswa.kelas"><br>
-    <label for="">Alamat</label>
-    <textarea v-model="siswa.alamat" cols="20" rows="5"></textarea><br>
-    <label for="">nilai matematika</label>
-    <input type="number" v-model="siswa.nilaimtk" id="mtk"><br>
-    <label for="">nilai b.indonesia</label>
-    <input type="number" v-model="siswa.nilaibhs" id="bhs"><br>
-    <label for="">nilai ipa</label>
-    <input type="number" v-model="siswa.nilaiipa" id="ipa"><br>
-    <button type="submit">Simpan</button>
-    </form>
-    <div v-if="showResult">
-      nama : {{ name }} <br>
-      kelas : {{ kelas }} <br>
-      alamat : {{ alamat }}<br>
-      nilaiMtk: {{ mtk }}<br>
-      nilaibhs: {{ bhs }}<br>
-      nilaiipa: {{ ipa }} <br>
-      Total nilai: {{ total }} <br>
-      keterangan: {{ keterangan }}
-    </div>
+ <Header text="ini adalah header"></Header>
+    <h2>Ini aplikasi Vue.js gue!</h2>
+    <my-component nama="John" umur="25"></my-component>
   </div>
 </template>
+
 <script>
-import { ref } from 'vue';
-
+import MyComponent from './components/Mycomponent.vue'; // Import komponen yang udah kita buat
+import Header from './components/header.vue';
 export default {
-
-  data() {
-    return {
-    siswa: {
-     nama: '',
-     kelas: '',
-     alamat: '',
-     nilaimtk: '',
-     nilaibhs: '',
-     nilaiipa: ''
-    },
-    showResult: ref(false),
-      name: ref(''),
-      kelas: ref(''),
-      alamat: ref(''),
-      mtk: ref(''),
-      bhs: ref(''),
-      ipa: ref(''),
-      total: 0,
-      keterangan : ref('')
-    };
-  },
-  methods: {
-    submitForm() {
-      this.name = this.siswa.nama;
-      this.kelas = this.siswa.kelas;
-      this.alamat = this.siswa.alamat;
-      this.mtk = this.siswa.nilaimtk;
-      this.bhs = this.siswa.nilaibhs;
-      this.ipa = this.siswa.nilaiipa;
-      this.total = parseInt(this.mtk) + parseInt(this.bhs) + parseInt(this.ipa);
-      if (this.total > 240) {
-        this.keterangan = "lulus"
-      } else {
-        this.keterangan = "tidak lulus"
-      } 
-      this.showResult = true;
-    },
-    
+  components: {
+    MyComponent, // Daftarkan komponen agar bisa digunakan di sini
+    Header
   },
 }
 </script>
