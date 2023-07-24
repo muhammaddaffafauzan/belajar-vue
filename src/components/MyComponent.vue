@@ -1,39 +1,18 @@
 <template>
-  <div>
-    <h1>Halo, dunia!</h1>
-    <p>Ini komponen buatan gue.</p>
-    <h2>Halo, {{ nama }}!</h2>
-    <p>Umur kamu: {{ umur }}</p>
-  </div>
+  <p>Ini dari MyComponent</p>
+  <p> Nama :{{ nama }}</p>
+  <p> Umur :{{ umur }}</p>
+  <p> jenis kelamin :{{ jk }}</p>
 </template>
 
-
-<script>
+<script>  
 export default {
-  name: 'MyComponent', // Nama komponen, bisa diubah sesuai kebutuhan
-  props: ['nama', 'umur'], // Definisi props "nama" dan "umur"
-  // Data komponen
-  data() {
-    return {
-      message: 'Ini pesan dari komponen!'
-    };
-  },
-  // Metode-metode komponen
-  methods: {
-    greet() {
-      console.log('Halo, bro!');
+  name: 'MyComponent',
+  props: ['nama', 'umur'],
+  data(){
+    return{
+      jk:'lakilaki'
     }
   }
 }
 </script>
-
-
-<style>
-h1 {
-  color: blue;
-}
-
-p {
-  font-size: 16px;
-}
-</style>

@@ -11,6 +11,7 @@ export default {
 </script>
 <style>
 h3{
+  text-align: center;
   color: black;
   background-color: cadetblue;
 }
