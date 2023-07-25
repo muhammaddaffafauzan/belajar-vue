@@ -1,6 +1,5 @@
 <template>
   <NewComponent></NewComponent>
-
 </template>
 
 <script setup>

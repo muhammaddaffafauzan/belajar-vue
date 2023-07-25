@@ -1,11 +1,16 @@
 <template>
   <div>
 <input type="v-model" v-model="cari" placeholder="Cari Data">
-<ul>
+<div v-if="cariData.length === 0">
+    <p>data tidak tersedia</p>
+
+  </div>
+  <ul>
   <li v-for="item in cariData" :key="item.id">
        {{ item.title }} - {{ item.price }}   
   </li>
 </ul>
+
   </div>
 </template>
 <script>
@@ -30,7 +35,8 @@ export default {
         return this.products.filter((item)=>{
            return item.title.match(this.cari);
         });
-      }
-    } 
+      },
+
+    }
   }
 </script>
