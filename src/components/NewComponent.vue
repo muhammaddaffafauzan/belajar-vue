@@ -10,13 +10,11 @@
   <hr>
   <ComponentWatchers nama="nanang" umur="11"></ComponentWatchers>
   <EventComponent :name="nama" :umur="umur" @greeted="onGreeted"></EventComponent>
-  <template #footer>
-  <p></p>
-  </template>
+
 
   </template>
   
-  <script>
+  <script setup>
   import EventComponent from './EventComponent.vue';
   import ComponentWatchers from './ComponentWatchers.vue';
   import LatihanDuaComponent from './LatihanDuaComponent.vue';
@@ -25,26 +23,10 @@
   import Umur from '../components/umur.vue';
   // event
   import { ref } from 'vue';
-  const nama = ref('John');
-  const umur =  ref(25);
-
-  const onGreeted = () => {
-    console.log('kamu')
-  }
-  export default{
-    components : {
-    MyComponent,
-    Header,
-    Umur,
-    LatihanDuaComponent,
-    ComponentWatchers,
-    EventComponent
-},
-    data(){
-    return{
-      alamat: 'bandung'
-    }
-  }
-  
-  }
+const nama = ref('John');
+const umur = ref(25);
+const onGreeted = () => {
+    console.log('Kamu udah disapa, bro!');
+};
+ 
   </script>
