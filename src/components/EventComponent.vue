@@ -3,6 +3,8 @@
       <h2 v-if="umur >= 18">{{ pesanSelamat }}</h2>
       <p v-else>Maaf, kamu belum cukup umur.</p>
       <button @click="greet">Sapa Bro!</button>
+      <slot name="header"></slot>
+      <slot name="footer"></slot>
   </div>
 </template>
 

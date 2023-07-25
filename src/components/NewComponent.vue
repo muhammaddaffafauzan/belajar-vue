@@ -1,4 +1,5 @@
 <template>
+  <div>
     <Header text="header"></Header>
   <p>Ini Dari NewComponent</p>
   <MyComponent nama="ucup" umur="18"/>
@@ -9,8 +10,19 @@
   <LatihanDuaComponent></LatihanDuaComponent>
   <hr>
   <ComponentWatchers nama="nanang" umur="11"></ComponentWatchers>
-  <EventComponent :name="nama" :umur="umur" @greeted="onGreeted"></EventComponent>
-
+  <EventComponent :nama="nama" :umur="umur" @greeted="onGreeted">
+            <template #footer>
+                <div>
+                    <p>Ini Adalah Footer Latihan Event</p>
+                </div>
+            </template>
+            <template #header>
+                <div>
+                    <p>Ini Adalah Header latihan Event</p>
+                </div>
+            </template>
+        </EventComponent>
+    </div>
 
   </template>
   
