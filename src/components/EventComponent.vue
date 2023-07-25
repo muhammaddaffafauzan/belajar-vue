@@ -1,38 +1,35 @@
 <template>
   <div>
-    <h1>Aplikasi Vue.js Gue</h1>
-    <my-component
-      :nama="nama"
-      :umur="umur"
-      @greeted="onGreeted"
-    >
-      <p>Ini konten tambahan dalam slot</p>
-    </my-component>
+      <h2 v-if="umur >= 18">{{ pesanSelamat }}</h2>
+      <p v-else>Maaf, kamu belum cukup umur.</p>
+      <button @click="greet">Sapa Bro!</button>
   </div>
 </template>
 
 <script>
-import MyComponent from './MyComponent.vue';
-
 export default {
-  components: {
-    MyComponent
-  },
+  props: ['nama', 'umur'],
   data() {
-    return {
-      nama: 'John',
-      umur: 25
-    };
+      return {
+          pesan: 'Halo, ' + this.nama + '!'
+      };
   },
   methods: {
-    onGreeted() {
-      console.log('Kamu udah disapa, bro!');
-    },
-    greet() {
-            console.log('Halo, bro!');
-            this.$emit('greeted'); // Memancarkan event 'greeted'
-        }
+      greet() {
+          console.log('Halo, bro!');
+          this.$emit('greeted'); // Memancarkan event 'greeted'
+      }
+  },
+  computed: {
+      pesanSelamat() {
+          return 'Selamat datang, ' + this.nama + '!';
+      }
+  },
+  watch: {
+      umur(newUmur, oldUmur) {
+          console.log('Umur berubah dari', oldUmur, 'menjadi', newUmur);
+          // Lakukan tindakan responsif lainnya...
+      }
   }
-  
 }
 </script>
