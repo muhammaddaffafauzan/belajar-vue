@@ -11,7 +11,7 @@ export default {
   props: ['nama', 'umur'],
   data(){
     return{
-      jk:'lakilaki'
+      jk:'laki-laki'
     }
   }
 }
